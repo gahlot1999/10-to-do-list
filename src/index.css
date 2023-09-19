@@ -1,0 +1,234 @@
+:root {
+  --clr-primary: hsl(3, 89%, 64%);
+  --clr-secondary: hsl(305, 17%, 28%);
+  --clr-light: hsl(12, 49%, 86%);
+  --clr-lighter: hsl(11, 28%, 92%);
+  --clr-dark: hsl(310, 30%, 16%);
+
+  --clr-primary-hsl: 3, 89%, 64%;
+  --clr-secondary-hsl: 305, 17%, 28%;
+  --clr-bg-hsl: 11, 28%, 92%;
+  --clr-light-hsl: 12, 49%, 86%;
+  --clr-dark-hsl: 310, 30%, 16%;
+}
+
+/**************** CSS RESET ****************/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font: inherit;
+}
+
+html {
+  height: 100dvh;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: inherit;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.6rem;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--clr-light);
+}
+
+button {
+  border: 1px solid var(--clr-dark);
+  outline-style: none;
+  padding: 0.3rem 1.8rem;
+  font-weight: 600;
+  background-color: transparent;
+  color: var(--clr-dark);
+  transition: all 0.3s;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+/**************** CSS RESET END ****************/
+
+main {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('/main-bg.jpg');
+}
+
+header {
+  text-align: center;
+  padding: 1.8rem 0;
+
+  background-color: hsl(var(--clr-dark-hsl), 0.85);
+}
+
+footer {
+  text-align: center;
+  padding: 1.2rem 0;
+  background-color: hsl(var(--clr-dark-hsl), 0.85);
+
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--clr-lighter);
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+}
+
+.sort {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.sort button {
+  font-size: 1.4rem;
+  padding: 0.2rem 1.2rem;
+  border-radius: 100px;
+  border: 1px solid var(--clr-light);
+  color: var(--clr-lighter);
+}
+
+.todo-add-form,
+.todo-list {
+  backdrop-filter: blur(5px);
+}
+
+.todo-add-form {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.todo-add-form input {
+  width: 350px;
+  padding: 0.4rem 0.5rem;
+}
+
+.todo-add-form button {
+  padding: 0.4rem 2rem;
+  background-color: var(--clr-dark);
+  color: var(--clr-lighter);
+  border: none;
+}
+
+.todo-list {
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo-list > div {
+  margin-bottom: 2rem;
+}
+
+.todo-list-item {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-list-item:hover {
+  cursor: pointer;
+}
+
+.todo-list-item input {
+  flex-basis: 2rem;
+}
+
+.todo-list-item p {
+  user-select: none;
+  font-weight: 500;
+  flex-basis: 30rem;
+}
+
+.completed {
+  text-decoration: line-through;
+  font-weight: 400 !important;
+}
+
+@media (max-width: 600px) {
+  .todo-list-item {
+    width: 90%;
+    justify-content: space-between;
+  }
+
+  .todo-list-item p {
+    flex-basis: 20rem;
+  }
+
+  .todo-add-form input {
+    width: 220px;
+    padding: 0.4rem 0.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .todo-list-item p {
+    flex-basis: 16rem;
+  }
+}
