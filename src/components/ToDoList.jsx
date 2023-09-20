@@ -57,12 +57,12 @@ function ToDoList() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [toDo, setToDo] = useState('');
 
-  const total = state.todos.length;
-  const completed = state.todos.filter((el) => el.completed === true).length;
+  const total = state.todos?.length;
+  const completed = state.todos.filter((el) => el.completed === true)?.length;
 
   useEffect(() => {
     const savedTodos = JSON.parse(localStorage.getItem('todos'));
-    if (savedTodos.length > 0) {
+    if (savedTodos?.length > 1) {
       dispatch({ type: 'INITIALIZE', payload: savedTodos });
     }
   }, []);
