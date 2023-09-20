@@ -136,7 +136,7 @@ footer {
   gap: 1rem;
 }
 
-.sort {
+.filter {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -144,7 +144,7 @@ footer {
   gap: 1rem;
 }
 
-.sort button {
+.filter button {
   font-size: 1.4rem;
   padding: 0.2rem 1.2rem;
   border-radius: 100px;
@@ -209,6 +209,11 @@ footer {
 .completed {
   text-decoration: line-through;
   font-weight: 400 !important;
+}
+
+.active {
+  background-color: var(--clr-lighter) !important;
+  color: var(--clr-dark) !important;
 }
 
 @media (max-width: 600px) {
