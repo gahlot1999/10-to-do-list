@@ -62,7 +62,7 @@ function ToDoList() {
 
   useEffect(() => {
     const savedTodos = JSON.parse(localStorage.getItem('todos'));
-    if (savedTodos?.length > 1) {
+    if (savedTodos?.length > 0) {
       dispatch({ type: 'INITIALIZE', payload: savedTodos });
     }
   }, []);
